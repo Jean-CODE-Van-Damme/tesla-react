@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useState } from "react";
+import Header from "./components/Header";
+import Sections from "./components/Sections";
 
 function App() {
+  const [condition1, setCondition1] = useState(false);
+  const [condition2, setCondition2] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header nameProject="Ma prochaine Tesla" />
+      <Sections
+        condition1={condition1}
+        setCondition1={setCondition1}
+        condition2={condition2}
+        setCondition2={setCondition2}
+      />
     </div>
   );
 }
